@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE employees [
+  <!ELEMENT employees (employee+)>
+  <!ELEMENT employee (empID, name, department, designation, email, salary)>
+  <!ELEMENT empID (#PCDATA)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT department (#PCDATA)>
+  <!ELEMENT designation (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT salary (#PCDATA)>
+]>
+<employees>
+  <employee><br>
+    <empID>101</empID>
+    <name>suhani katekhaye</name>
+    <department>Human Resources</department><br>
+    <designation>HR Executive</designation><br>
+    <email>suhanikatekahye@rxample.com</email><br>
+    <salary>50000</salary><br><br>
+  </employee>
+
+  <employee><br><br>
+    <empID>102</empID><br>
+    <name>Aditya Sharma</name><br>
+    <department>IT</department><br>
+    <designation>Software Engineer</designation><br>
+    <email>aditya.sharma@example.com</email><br>
+    <salary>60000</salary><br>
+  </employee>
+  <employee><br><br>
+    <empID>103</empID><br>
+    <name>Tushar kumar</name><br>
+    <department>EEE</department><br>
+    <designation>eletrical Engineer</designation><br>
+    <email>tusharkuamra@example.com</email><br>
+    <salary>70000</salary><br>
+  </employee>
+</employees>
