@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Info Access</title>
+</head>
+<body>
+  <h2>Second Student's Information</h2>
+  <div id="studentInfo"></div>
+
+  <script>
+    // Sample XML string
+    const xmlString = `
+      <students>
+        <student>
+          <name>Mahin sheikh</name>
+          <age>19</age>
+          <course>Computer Science</course>
+        </student>
+        <student>
+          <name>Suhani katekhaye</name>
+          <age>19</age>
+          <course>computer Science</course>
+        </student>
+        <student>
+          <name> Dyneshwari Khot</name>
+          <age>20</age>
+          <course>Elerical Eng</course>
+        </student>
+      </students>
+    `;
+
+    // Parse XML using DOMParser
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(xmlString, "text/xml");
+
+    // Access second student (index 1)
+    const secondStudent = xmlDoc.getElementsByTagName("student")[1];
+    const name = secondStudent.getElementsByTagName("name")[0].textContent;
+    const age = secondStudent.getElementsByTagName("age")[0].textContent;
+    const course = secondStudent.getElementsByTagName("course")[0].textContent;
+
+    // Display in HTML
+    document.getElementById("studentInfo").innerHTML = `
+      <strong>Name:</strong> ${name}<br>
+      <strong>Age:</strong> ${age}<br>
+      <strong>Course:</strong> ${course}
+    `;
+  </script>
+</body>
+</html>
