@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      text-align: center;
+    }
+    input, select, button {
+      margin: 10px;
+      padding: 10px;
+      font-size: 16px;
+    }
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h2>🧮 Simple Calculator</h2>
+
+  <input type="number" id="num1" placeholder="Enter first number"><br>
+  <input type="number" id="num2" placeholder="Enter second number"><br>
+
+  <select id="operation">
+    <option value="add">Addition (+)</option>
+    <option value="subtract">Subtraction (−)</option>
+    <option value="multiply">Multiplication (×)</option>
+    <option value="divide">Division (÷)</option>
+  </select><br>
+
+  <button onclick="calculate()">Calculate</button>
+
+  <div id="result"></div>
+
+  <script>
+    function calculate() {
+      const a = parseFloat(document.getElementById("num1").value);
+      const b = parseFloat(document.getElementById("num2").value);
+      const op = document.getElementById("operation").value;
+      let result;
+
+      if (isNaN(a) || isNaN(b)) {
+        result = "❗ Please enter valid numbers.";
+      } else {
+        switch (op) {
+          case "add":
+            result = `Result: ${a + b}`;
+            break;
+          case "subtract":
+            result = `Result: ${a - b}`;
+            break;
+          case "multiply":
+            result = `Result: ${a * b}`;
+            break;
+          case "divide":
+            result = b !== 0 ? `Result: ${(a / b).toFixed(2)}` : "❗ Cannot divide by zero.";
+            break;
+          default:
+            result = "❗ Invalid operation.";
+        }
+      }
+
+      document.getElementById("result").innerHTML = result;
+    }
+  </script>
+</body>
+</html>
