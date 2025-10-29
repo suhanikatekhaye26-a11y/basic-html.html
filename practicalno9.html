@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admission Registration</title>
+  <script>
+    function validateForm() {
+      let name = document.getElementById("name").value.trim();
+      let email = document.getElementById("email").value.trim();
+      let phone = document.getElementById("phone").value.trim();
+      let age = parseInt(document.getElementById("age").value);
+      let password = document.getElementById("password").value;
+
+      // Name validation
+      if (name === "") {
+        alert("Name cannot be empty.");
+        return false;
+      }
+
+      // Email validation
+      let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!email.match(emailPattern)) {
+        alert("Please enter a valid email.");
+        return false;
+      }
+
+      // Phone validation
+      let phonePattern = /^\d{10}$/;
+      if (!phone.match(phonePattern)) {
+        alert("Phone number must be 10 digits.");
+        return false;
+      }
+
+      // Age validation
+      if (isNaN(age) || age < 18 || age > 60) {
+        alert("Age must be between 18 and 60.");
+        return false;
+      }
+
+      // Password validation
+      if (password.length < 6) {
+        alert("Password must be at least 6 characters.");
+        return false;
+      }
+
+      alert("Form submitted successfully!");
+      return true;
+    }
+  </script>
+</head>
+<body>
+  <h2>Admission Registration Form</h2>
+  <form onsubmit="return validateForm()">
+    <label>Full Name:</label><br>
+    <input type="text" id="name"><br><br>
+
+    <label>Email:</label><br>
+    <input type="text" id="email"><br><br>
+
+    <label>Phone Number:</label><br>
+    <input type="text" id="phone"><br><br>
+
+    <label>Age:</label><br>
+    <input type="number" id="age"><br><br>
+
+    <label>Password:</label><br>
+    <input type="password" id="password"><br><br>
+
+    <input type="submit" value="Register">
+  </form>
+</body>
+</html>
