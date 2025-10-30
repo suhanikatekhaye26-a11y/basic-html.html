@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Loops and Conditions</title>
+</head>
+<body>
+    <h2>JavaScript Loop and Conditional Demo</h2>
+    <script>
+        // [A] FOR LOOP: Print numbers from 1 to 5
+        console.log("Using For Loop:");
+        for (let i = 1; i <= 5; i++) {
+            console.log("Number:", i);
+        }
+
+        // [A] WHILE LOOP: Print numbers from 5 to 1
+        console.log("Using While Loop:");
+        let j = 5;
+        while (j >= 1) {
+            console.log("Number:", j);
+            j--;
+        }
+
+        // [B] FUNCTION to check Even or Odd
+        function checkEvenOdd(num) {
+            if (num % 2 === 0) {
+                console.log(num + " is Even");
+            } else {
+                console.log(num + " is Odd");
+            }
+        }
+
+        // [B] FUNCTION to assign Grade
+        function gradeStudent(marks) {
+            if (marks >= 90) {
+                console.log("Grade: A");
+            } else if (marks >= 75) {
+                console.log("Grade: B");
+            } else if (marks >= 50) {
+                console.log("Grade: C");
+            } else {
+                console.log("Grade: F");
+            }
+        }
+
+        // Function Calls
+        checkEvenOdd(7);       // Output: 7 is Odd
+        gradeStudent(82);      // Output: Grade: B
+    </script>
+</body>
+</html>
