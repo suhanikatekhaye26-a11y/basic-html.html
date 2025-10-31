@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Programming Books JSON</title>
+</head>
+<body>
+
+  <h2>Programming Books Library</h2>
+  <ul id="book-list"></ul>
+
+  <!-- JSON Data Embedded in HTML -->
+  <script type="application/json" id="books-data">
+  {
+    "books": [
+      {
+        "title": "JavaScript: The Good Parts",
+        "edition": "1st",
+        "author": "Douglas Crockford"
+      },
+      {
+        "title": "Clean Code",
+        "edition": "1st",
+        "author": "Robert C. Martin"
+      },
+      {
+        "title": "Introduction to Algorithms",
+        "edition": "3rd",
+        "author": "Thomas H. Cormen"
+      },
+      {
+        "title": "Effective Java",
+        "edition": "3rd",
+        "author": "Joshua Bloch"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JavaScript to Read and Display JSON -->
+  <script>
+    const jsonData = document.getElementById("books-data").textContent;
+    const bookObj = JSON.parse(jsonData);
+
+    const list = document.getElementById("book-list");
+    bookObj.books.forEach(book => {
+      const item = document.createElement("li");
+      item.textContent = `${book.title} (${book.edition}) by ${book.author}`;
+      list.appendChild(item);
+    });
+  </script>
+
+</body>
+</html>
